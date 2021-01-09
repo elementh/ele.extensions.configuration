@@ -4,7 +4,7 @@
         <TargetFramework>net5.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.1.1</PackageVersion>
         <PackageId>Ele.Extensions.Configuration</PackageId>
         <Title>Ele Configuration Extensions</Title>
         <Authors>Lucas Maximiliano Marino</Authors>

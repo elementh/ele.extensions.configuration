@@ -43,7 +43,7 @@ namespace Ele.Extensions.Configuration
         public static ILogger LoadLogger(IConfiguration configuration)
         {
             var environment = $"{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production"}";
-            
+
             var cloudWatchSink = new CloudWatchSinkOptions
             {
                 LogGroupName = $"{configuration["LOG_GROUP_NAME"]}#{environment}",
@@ -52,8 +52,9 @@ namespace Ele.Extensions.Configuration
                 TextFormatter = new CompactJsonFormatter(),
                 MinimumLogEventLevel = environment == "Development" ? LogEventLevel.Debug : LogEventLevel.Information
             };
-            
-            var client = new AmazonCloudWatchLogsClient(new BasicAWSCredentials(configuration["AWS_ACCESS_KEY"], configuration["AWS_SECRET_KEY"]), RegionEndpoint.EUWest1);
+
+            var client = new AmazonCloudWatchLogsClient(new BasicAWSCredentials(configuration["AWS_ACCESS_KEY"], configuration["AWS_SECRET_KEY"]),
+                RegionEndpoint.EUWest1);
 
             var loggerConf = new LoggerConfiguration()
                 .Enrich.FromLogContext()
@@ -62,12 +63,20 @@ namespace Ele.Extensions.Configuration
 
             if (environment == "Development")
             {
-                loggerConf.WriteTo.Console();
                 loggerConf.MinimumLevel.Debug();
             }
             else
             {
                 loggerConf.MinimumLevel.Warning();
+            }
+
+            if (environment == "Development")
+            {
+                loggerConf.WriteTo.Console();
+            }
+            else if (!string.IsNullOrWhiteSpace(configuration["ENABLE_CONSOLE_LOGS"]))
+            {
+                loggerConf.WriteTo.Console();
             }
 
             return loggerConf.CreateLogger();
