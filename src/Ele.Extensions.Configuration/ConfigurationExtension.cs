@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
+using Amazon;
 using Amazon.CloudWatchLogs;
-using Amazon.Internal;
 using Amazon.Runtime;
 using Microsoft.Extensions.Configuration;
 using Serilog;
@@ -54,7 +54,7 @@ namespace Ele.Extensions.Configuration
                 MinimumLogEventLevel = environment == "Development" ? LogEventLevel.Debug : LogEventLevel.Information
             };
             
-            var client = new AmazonCloudWatchLogsClient(new BasicAWSCredentials(configuration["AWS_ACCESS_KEY"], configuration["AWS_SECRET_KEY"]), RegionEndpointProviderV2.RegionEndpoint.EUWest1);
+            var client = new AmazonCloudWatchLogsClient(new BasicAWSCredentials(configuration["AWS_ACCESS_KEY"], configuration["AWS_SECRET_KEY"]), RegionEndpoint.EUWest1);
 
             var loggerConf = new LoggerConfiguration()
                 .Enrich.FromLogContext()
