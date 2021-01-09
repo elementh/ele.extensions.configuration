@@ -38,7 +38,6 @@ namespace Ele.Extensions.Configuration
         /// Creates a logger using Serilog.
         /// </summary>
         /// <param name="configuration"></param>
-        /// <param name="service"></param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
         public static ILogger LoadLogger(IConfiguration configuration)
