@@ -12,13 +12,15 @@ namespace Example.Project
 {
     public class Program
     {
-        private static IConfiguration Configuration { get; } = ConfigurationExtension.LoadConfiguration(Directory.GetCurrentDirectory()); // Here
+        // HERE
+        private static IConfiguration Configuration { get; } = ConfigurationExtension.LoadConfiguration(Directory.GetCurrentDirectory());
 
         public static void Main(string[] args)
         {
             var assembly = Assembly.GetCallingAssembly().GetName().Name;
 
-            Log.Logger = ConfigurationExtension.LoadLogger(Configuration); // Here
+            // HERE
+            Log.Logger = ConfigurationExtension.LoadLogger(Configuration);
 
             try
             {
@@ -48,7 +50,8 @@ namespace Example.Project
                     {
                         services.AddControllers();
                     });
-                    webBuilder.UseSerilog(); // Here
+                    // HERE
+                    webBuilder.UseSerilog();
                 });
     }
 }
