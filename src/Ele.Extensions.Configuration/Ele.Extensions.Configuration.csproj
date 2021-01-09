@@ -2,6 +2,21 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageVersion>1.0.0</PackageVersion>
+        <PackageId>Ele.Extensions.Configuration</PackageId>
+        <Title>Ele Configuration Extensions</Title>
+        <Authors>Lucas Maximiliano Marino</Authors>
+        <Description>Configuration extensions.</Description>
+        <PackageProjectUrl>https://github.com/navigatorframework/navigator</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/elementh/ele.extensions.configuration</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/elementh/ele.extensions.configuration/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/elementh/ele.extensions.configuration</RepositoryUrl>
+        <PackageTags>Configuration, Extension, Logging</PackageTags>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Copyright>Copyright © Lucas Maximiliano Marino 2021</Copyright>
+
     </PropertyGroup>
 
     <ItemGroup>
