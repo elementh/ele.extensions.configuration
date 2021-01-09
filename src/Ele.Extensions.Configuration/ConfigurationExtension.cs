@@ -67,7 +67,7 @@ namespace Ele.Extensions.Configuration
             }
             else
             {
-                loggerConf.MinimumLevel.Warning();
+                loggerConf.MinimumLevel.Information();
             }
 
             if (environment == "Development")
