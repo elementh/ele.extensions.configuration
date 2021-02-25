@@ -17,6 +17,7 @@
     <ItemGroup>
         <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
         <PackageReference Include="Serilog.Exceptions" Version="6.0.0" />
+        <PackageReference Include="Serilog.Exceptions.EntityFrameworkCore" Version="6.0.0" />
         <PackageReference Include="Serilog.Sinks.AwsCloudWatch" Version="4.0.168" />
         <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     </ItemGroup>
